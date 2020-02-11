@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<TabPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AirQualityApp.Controller">
+   <tabs>
+      <Tab closable="false" text="Measurements">
+         <content>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="950.0">
+               <children>
+                  <HBox minWidth="-Infinity" prefHeight="454.0" prefWidth="950.0">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="283.0" prefWidth="266.0">
+                           <children>
+                              <Label prefHeight="34.0" prefWidth="138.0" text="City">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="25.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="cityTxTField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="160.0">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" left="20.0" right="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label prefHeight="31.0" prefWidth="129.0" text="Values">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="25.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefHeight="12.0" prefWidth="246.0">
+                                 <children>
+                                    <CheckBox fx:id="bcCheck" mnemonicParsing="false" text="BC">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                    <CheckBox fx:id="coCheck" mnemonicParsing="false" text="CO">
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="17.0" prefWidth="246.0">
+                                 <children>
+                                    <CheckBox fx:id="pm10Check" mnemonicParsing="false" text="PM10">
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                    <CheckBox fx:id="pm25Check" mnemonicParsing="false" text="PM2.5">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="16.0" prefWidth="241.0">
+                                 <children>
+                                    <CheckBox fx:id="o3Check" mnemonicParsing="false" text="O3">
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                    <CheckBox fx:id="no2Check" mnemonicParsing="false" text="NO2">
+                                       <HBox.margin>
+                                          <Insets left="25.0" />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="80.0" prefWidth="241.0">
+                                 <children>
+                                    <CheckBox fx:id="so2Check" mnemonicParsing="false" text="SO2">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </CheckBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="36.0" prefWidth="256.0">
+                                 <children>
+                                    <Button fx:id="addBtn" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addBtnOnAction" prefHeight="30.0" prefWidth="90.0" text="Submit">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="clearBtn" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearBtnOnAction" prefHeight="30.0" prefWidth="90.0" text="Clear">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="36.0" prefWidth="256.0">
+                                 <children>
+                                    <Button fx:id="saveFileBtn" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveFileBtnOnAction" prefHeight="30.0" prefWidth="90.0" text="Save file">
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="openFileBtn" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openFileBtnOnAction" prefHeight="30.0" prefWidth="90.0" text="Open file">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="vBoxResults" maxWidth="-Infinity" prefHeight="383.0" prefWidth="349.0">
+                           <children>
+                              <Label fx:id="resultsLabel" prefHeight="34.0" prefWidth="138.0" text="Results">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="latestLabel" prefHeight="34.0" prefWidth="212.0" text="Average measurements">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefHeight="19.0" prefWidth="331.0">
+                                 <children>
+                                    <Label fx:id="cityLabel" text="City">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <TextFlow fx:id="txtFlow" prefHeight="24.0" prefWidth="331.0" styleClass="paragraph">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </TextFlow>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="334.0">
+                           <children>
+                              <ComboBox fx:id="paramsStatsComboBox" prefWidth="150.0">
+                                 <VBox.margin>
+                                    <Insets left="90.0" top="20.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Button fx:id="showStatsBtn" mnemonicParsing="false" onAction="#showStatsBtnOnAction" prefHeight="30.0" prefWidth="90.0" text="Show stats">
+                                 <VBox.margin>
+                                    <Insets left="120.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="statsLabel" prefHeight="20.0" prefWidth="138.0" text="Stats">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="25.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="MEASUREMENTS">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="nrMesLabel">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="MIN VALUE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="minVLabel">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="MAX VALUE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="maxVLabel">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="STANDARD DEVIATION">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="stDevLabel">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="INDEX OF AIR QUALITY">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="aqiLabel">
+                                 <VBox.margin>
+                                    <Insets left="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <AnchorPane prefHeight="7.0" prefWidth="334.0">
+                                 <children>
+                                    <ImageView fitHeight="23.0" fitWidth="236.0" layoutX="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.topAnchor="10.0">
+                                       <image>
+                                          <Image url="@aqi.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Rectangle fx:id="aqiIndicator" arcHeight="5.0" arcWidth="5.0" fill="#686b6c" height="30.0" layoutX="15.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="7.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="5.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+      <Tab fx:id="tab2" closable="false" text="Charts">
+        <content>
+          <AnchorPane fx:id="anchorTab" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BarChart fx:id="chart" layoutX="-2.0" layoutY="41.0" legendSide="TOP" prefHeight="359.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</TabPane>

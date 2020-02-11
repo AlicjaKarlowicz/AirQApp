@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AirQualityApp.StartController">
+   <children>
+      <Label alignment="TOP_CENTER" prefHeight="52.0" prefWidth="271.0" text="Take a deep breath...">
+         <font>
+            <Font size="29.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="90.0" />
+         </VBox.margin>
+      </Label>
+      <Label prefHeight="52.0" prefWidth="200.0" text="Unless the air is polluted ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="startBtn" mnemonicParsing="false" onAction="#startBtnOnAction" prefHeight="33.0" prefWidth="183.0" text="Let's find out">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</VBox>
